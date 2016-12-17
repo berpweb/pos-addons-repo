@@ -21,7 +21,7 @@
         <div class="pos-sale-ticket">
 
             <div class="pos-center-align"><t t-esc="new Date().toString(Date.CultureInfo.formatPatterns.shortDate + ' ' +
-                Date.CultureInfo.formatPatterns.longTime)"/> <t t-esc="order.get('name')"/></div>
+                Date.CultureInfo.formatPatterns.longTime)"/> Order No: <t t-esc="order.get('name').split('-')[2]"/></div>
             <br />
             <t t-esc="widget.pos.company.name"/><br />
             Phone: <t t-esc="widget.pos.company.phone || ''"/><br />
