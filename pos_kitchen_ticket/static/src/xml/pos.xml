@@ -35,12 +35,14 @@
                     <col width='25%' />
                 </colgroup>
                 <tr t-foreach="orderlines" t-as="orderline">
-                    <td>
-                        <t t-esc="orderline.get_product().display_name"/>
-                    </td>
-                    <td class="pos-right-align">
-                        <t t-esc="orderline.get_quantity_str_with_unit()"/>
-                    </td>
+					<t t-if="orderline.get_product().print_in_kitchen_ticket">
+	                    <td>
+	                        <t t-esc="orderline.get_product().display_name"/>
+	                    </td>
+	                    <td class="pos-right-align">
+	                        <t t-esc="orderline.get_quantity_str_with_unit()"/>
+	                    </td>
+                    </t>
                 </tr>
             </table>
             <br />
