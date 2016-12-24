@@ -18,7 +18,7 @@
     </t>
 
     <t t-name="KitchenTicket">
-        <div class="pos-sale-ticket">
+        <div class="pos-sale-ticket" style="font-size:1.2em;font-weight:bold;color:black;font-family: Lato;">
 
             <div class="pos-center-align"><t t-esc="new Date().toString(Date.CultureInfo.formatPatterns.shortDate + ' ' +
                 Date.CultureInfo.formatPatterns.longTime)"/> Order No: <t t-esc="order.get('name').split('-')[2]"/></div>
@@ -32,9 +32,16 @@
             <table>
                 <colgroup>
                     <col width='50%' />
+                    <col width='15%' />
                     <col width='25%' />
-                    <col width='25%' />
+                    <col width='10%' />
                 </colgroup>
+                <tr>
+                	<th width='50%' style="text-align:center;">Items</th>
+                	<th width='15%' style="text-align:right;">#Qty</th>
+                	<th width='25%' style="text-align:right;">Price</th>
+                	<th width='10%'></th>
+                </tr>
                 <tr t-foreach="orderlines" t-as="orderline">
 					<t t-if="orderline.get_product().print_in_kitchen_ticket">
 	                    <td>

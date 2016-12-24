@@ -22,7 +22,7 @@ openerp.pos_kitchen_ticket = function (instance) {
         show: function(){
             this._super();
             var self = this;
-
+            
             var print_button = this.add_action_button({
                     label: _t('Print'),
                     icon: '/point_of_sale/static/src/img/icons/png48/printer.png',
