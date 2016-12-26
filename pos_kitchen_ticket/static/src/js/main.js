@@ -23,6 +23,14 @@ openerp.pos_kitchen_ticket = function (instance) {
             this._super();
             var self = this;
             
+            this.add_action_button({
+                    label: _t('Back'),
+                    icon: '/point_of_sale/static/src/img/icons/png48/go-previous.png',
+                    click: function(){  
+                        self.back();
+                    },
+                });
+            
             var print_button = this.add_action_button({
                     label: _t('Print'),
                     icon: '/point_of_sale/static/src/img/icons/png48/printer.png',
@@ -53,8 +61,11 @@ openerp.pos_kitchen_ticket = function (instance) {
             }, 2000);
         },
         print: function() {
-            this.pos.get('selectedOrder')._printed = true;
+            //this.pos.get('selectedOrder')._printed = true;
             window.print();
+        },
+        back: function() {
+            self.pos_widget.screen_selector.set_current_screen('products');
         },
         finishOrder: function() {
             this.pos.get('selectedOrder').destroy();
