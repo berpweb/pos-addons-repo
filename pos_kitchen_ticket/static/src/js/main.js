@@ -52,7 +52,7 @@ openerp.pos_kitchen_ticket = function (instance) {
             this.refresh();
 
             if (!this.pos.get('selectedOrder')._printed) {
-                this.print();
+                //this.print();
             }
 
             finish_button.set_disabled(true);
