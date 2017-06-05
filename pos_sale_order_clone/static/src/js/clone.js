@@ -54,7 +54,7 @@ var CloneButton = screens.ActionButtonWidget.extend({
                 var options = {
                     'quantity':line.qty,
                     //uncomment: if you want the price from SO, not from the product
-                    //'price':line.price_subtotal
+                    'price':line.price_subtotal
                 };
                 current_order.add_product(product, options);
                 if (line.discount)
